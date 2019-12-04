@@ -1,0 +1,128 @@
+/*--------------------------------------------------------------
+# Variables (Colors, Fonts, sizes)
+--------------------------------------------------------------*/
+@import "fonts";
+@import "variables";
+
+// /*--------------------------------------------------------------
+// # Normalize & Print
+// --------------------------------------------------------------*/
+@import "normalize";
+// @import "print";
+
+// /*--------------------------------------------------------------
+// # Typography
+// --------------------------------------------------------------*/
+@import "typography";
+
+// /*--------------------------------------------------------------
+// # Components
+// --------------------------------------------------------------*/
+@import "app";
+
+// /*--------------------------------------------------------------
+// # Responsive Bug Fixes
+// --------------------------------------------------------------*/
+@import "media";
+
+
+
+
+body {
+  background: $body-bg-color;
+  font-family: $body-font;
+  font-size: 16px;
+  color: $body-color;
+}
+
+
+
+main {
+  padding: 20px;
+}
+
+
+
+.menu-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+
+  @media (min-width: 980px) {
+    right: unset;
+    top: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__logo {
+    display: none;
+  }
+
+  nav {
+
+    ul {
+      display: flex;
+      justify-content: space-around;
+      padding: 5px;
+
+      @media (min-width: 980px) {
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      li {
+
+      }
+
+      .nav-button {
+        color: grey;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 44px;
+        height: 44px;
+        transition: all 0.15s linear;
+
+        @media (min-width: 980px) {
+          flex-direction: column;
+          margin: 15px;
+        }
+
+        i {
+          font-size: 24px;
+        }
+
+        &__label {
+          // hide
+          display: none;
+
+          @media (min-width: 980px) {
+            display: block;
+            font-size: 13px;
+          }
+        }
+
+        &:hover {
+          color: green;
+        }
+        &:focus {
+          border-radius: 99px;
+          background-color: lightgrey;
+        }
+
+        &.active {
+          border-radius: 99px;
+          background-color: green;
+          color: white;
+
+          i {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
